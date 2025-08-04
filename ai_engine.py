@@ -1,13 +1,15 @@
-import openai
-import os
+import streamlit as st
+import google.generativeai as genai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Configure the API key using Streamlit secrets
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 def get_ai_message(prompt):
-    response = openai.chat.completions.create(
-        model="gpt-3.5-turbo",  # or "gpt-4" if you have access
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.8,
-        max_tokens=150
-    )
-    return response.choices[0].message.content.strip()
+    # Select the Gemini model you want to use
+    model = genai.GenerativeModel('gemini-1.5-flash')
+    
+    # Make the API call to generate content
+    response = model.generate_content(prompt)
+    
+    # Return the text from the response
+    return response.text
