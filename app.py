@@ -77,5 +77,3 @@ if st.button("Generate Opening Line"):
     else:
         # Display a warning if the user hasn't entered a bio
         st.warning("Please enter your match's profile bio before generating a line.")
-
-�
