@@ -16,7 +16,7 @@ import os
 
 # For this example, we will use the hardcoded key from your notebook.
 # This is NOT recommended for production apps.
-genai.configure(api_key="AIzaSyAOu3n3durJJpZf3MHYavCIgWG1fSsHp5s")
+genai.configure(api_key="AIzaSyAOu3n7durJJpZf3MHYavCIgWG1fSsHp5s")
 
 # --- Function to Generate the Opening Line ---
 def generate_opening_line(match_bio, tone):
